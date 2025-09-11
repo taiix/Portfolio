@@ -8,7 +8,6 @@ import './style/forthSection.css';
 
 import React, { useEffect, useState, useRef } from "react";
 
-
 function App(){
   const totalSections = 4;
   const [currentSection, setCurrentSection] = useState(0);
@@ -73,9 +72,10 @@ const path = event.composedPath();
       behavior: "smooth",
     });
   }, [currentSection]);
-  
+
   return (
   <div>
+
     <div className="background"></div> {/* Background div */}
     <div><Message /></div>
   
@@ -92,6 +92,7 @@ const path = event.composedPath();
       ))}
     </div>
   </div>
+
   );
 }
 

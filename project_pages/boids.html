@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/style/appStyle.css"/>
+    <link rel="stylesheet" href="src/style/backButton.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+
+    <div class="container"></div>
+
+
+<script>
+  fetch('/backButton.html')
+    .then(res => res.text())
+    .then(html => {
+      const container = document.createElement('div');
+      container.innerHTML = html;
+      document.body.appendChild(container);
+    });
+</script>
+
+</body>
+</html>

@@ -19,7 +19,7 @@
   width: 90%;
   max-width: 1200px;   /* wider box */
   height: 500px;       /* fixed height */
-  margin: 40px auto;
+  margin: 175px auto;
   padding: 20px;
   display: flex;
   flex-direction: row;
