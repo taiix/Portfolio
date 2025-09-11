@@ -34,6 +34,11 @@
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+.frosted-container:hover{
+  background-color: red;
+  
+}
+
 /* Scrollbar styling */
 .frosted-container::-webkit-scrollbar {
   height: 8px;
@@ -97,13 +102,6 @@
 
 .frosted-container .card {
   transition: transform 0.3s, filter 0.3s;
-}
-
-/* Scale and unblur the hovered card */
-.frosted-container .card:hover {
-  transform: scale(1.06);
-  filter: none;
-  z-index: 2;
 }
 
 /* Blur all other cards when any card is hovered */

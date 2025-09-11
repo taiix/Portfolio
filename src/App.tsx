@@ -17,6 +17,18 @@ function App(){
 
   // Handle wheel events for smooth section navigation
   const handleWheel = (event: WheelEvent): void => {
+const path = event.composedPath();
+
+  const isInsideFrosted = path.some((el) =>
+    (el as HTMLElement)?.classList?.contains?.('frosted-container')
+  );
+
+  if (isInsideFrosted) {
+    return; // Let frosted-container handle its own scroll
+  }
+
+
+
     event.preventDefault();
     if (isScrolling.current) return;
 
