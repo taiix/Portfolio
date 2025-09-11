@@ -1,0 +1,43 @@
+@font-face 
+  {
+    font-family: 'HeliosExt-Bold';
+    src: url('../assets/fonts/HeliosExt-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face { 
+    font-family: 'HeliosExt';
+    src: url('../assets/fonts/HeliosExt.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    .name {
+        font-family: 'HeliosExt-Bold', sans-serif;
+        font-size: 2.5em;
+        color: #afeb8b;
+
+        position: absolute;
+        top: 35%;
+        left: 15%;
+    }
+    
+    .gameDevTextElement{
+        /* Box */
+        border-radius: 15px 50px;
+        background: #ffffff;
+        padding: 5px;
+
+        /* Text */
+        font-family: 'HeliosExt', sans-serif;
+        font-size: em;
+        color: #002f7b;
+      
+        position: absolute;
+        top: 45%;
+        left: 15%;
+
+        width: 30%;
+        height: 5%;
+        text-align: center;
+    }

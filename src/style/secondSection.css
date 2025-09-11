@@ -1,0 +1,59 @@
+#aboutMeSection{
+  
+  
+    height: 100vh;  /* Ensure it fills the full viewport height */
+    width: 100%;    /* Make sure it takes full width */
+    position: absolute;  /* Position it below the main background */
+    top: 100vh;          /* Start it right after the first background */
+    left: 0;             /* Align it to the left */
+    z-index: -1;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;  /* Ensure it takes full height */
+    text-align: center; /* Center text inside */
+    width: 55vw;
+    position: relative;
+    left: 355px;
+    top: -355px;
+  }
+  
+  /* About Me Header */
+  #aboutMe {
+    font-family: 'HeliosExt', sans-serif;
+    font-size: 2vw;
+    color: #002f7b;
+    margin-bottom: 10px; /* Space between the title and text */
+  
+    position: relative; /* Position it relative to the parent */
+    right: 86px;
+    bottom: 2px;
+  }
+  
+  /* About Me Text */
+  #aboutMeText {
+    font-family: 'HeliosExt', sans-serif;
+    font-size: 4vw;
+    color: #002f7b;
+    width: 50%;  /* Adjust width for better responsiveness */
+    max-width: 800px; /* Max width so it doesn't stretch too far on large screens */
+    margin: 0; /* Remove any default margins */
+    text-align: left;
+  
+    position: relative; /* Position it relative to the parent */
+    left: 25px;
+  }
+  
+  #aboutMeImage {
+    width: 40%;
+    height: auto;
+    max-width: 600px; /* Prevent it from being too large */
+    position: relative;
+    top: 235px;
+    left: 120px;
+    border-radius: 20px;
+  }

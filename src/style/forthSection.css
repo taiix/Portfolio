@@ -1,0 +1,114 @@
+#projectsSection {  
+  height: 100vh;  
+  width: 100%;    
+  position: absolute;  
+  top: 300vh;          
+  left: 0;             
+}
+
+#projectsTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Frosted scrollable container */
+.frosted-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;   /* wider box */
+  height: 500px;       /* fixed height */
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;           /* space between cards */
+  overflow-x: auto;    /* horizontal scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Scrollbar styling */
+.frosted-container::-webkit-scrollbar {
+  height: 8px;
+}
+.frosted-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+/* Card style (same as your example) */
+.card {
+  flex: 0 0 300px;   /* fixed card width */
+  height: 350px;     /* fixed card height */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* Image inside card */
+.card-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text inside card */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Hover effects */
+.card:hover {
+  transform: scale(1.06);
+  filter: none;
+  z-index: 2;
+}
+
+.frosted-container .card {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* Scale and unblur the hovered card */
+.frosted-container .card:hover {
+  transform: scale(1.06);
+  filter: none;
+  z-index: 2;
+}
+
+/* Blur all other cards when any card is hovered */
+.frosted-container:has(.card:hover) .card:not(:hover) {
+  filter: blur(3px) grayscale(0.6);
+  transform: scale(0.92);
+}
+

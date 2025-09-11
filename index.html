@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <div class="container"></div>
+
+    <div class="scroll-container">
+
+      <!-- Main Section -->
+      <section id="mainSection">
+        <div id="background-main"></div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="aboutMeSection">
+        <div id="block">
+          <div id="background-secondary"> 
+            <img id="aboutMeImage" src="./src/assets/secondSectionImage.png" alt="About Me Image">
+            <div class="content-wrapper">
+              <h1 id="aboutMe">About me</h1>
+              <h2 id="aboutMeText">It's exciting to solve your way out of challenges</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skillsSection">
+        <div id="background-skills"> 
+          <div id="block">
+            <div class="content-wrapper-skillsText">
+              <h1 id="skillsTitle">WHAT SKILLS DO I HAVE</h1>
+              <h2 id="skillsText">Skills</h2>
+            </div>
+            <div class="content-wrapper-skills">
+              <div class="skill-item unity">Unity</div>
+              <div class="skill-item csharp">C#</div>
+              <div class="skill-item shaders">Shaders</div>
+              <div class="skill-item math">3D Math</div>
+              <div class="skill-item art">Procedural Art</div>
+              <div class="skill-item web">Web</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projectsSection">
+        <div id="block">
+          <h1 id="projectsTitle">Projects</h1>
+
+          <div class="frosted-container">
+            <div class="card">
+              <img src="./src/assets/sample1.png" alt="Project 1" class="card-image">
+              <div class="card-text">
+                <p class="card-title">Project 1</p>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="./src/assets/sample2.png" alt="Project 2" class="card-image">
+              <div class="card-text">
+                <p class="card-title">Project 2</p>
+                <p class="card-desc">Integer id dictum augue, id viverra sapien.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="./src/assets/sample3.png" alt="Project 3" class="card-image">
+              <div class="card-text">
+                <p class="card-title">Project 3</p>
+                <p class="card-desc">Another description here for this project.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="./src/assets/sample4.png" alt="Project 4" class="card-image">
+              <div class="card-text">
+                <p class="card-title">Project 4</p>
+                <p class="card-desc">Additional project description here.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="./src/assets/sample5.png" alt="Project 5" class="card-image">
+              <div class="card-text">
+                <p class="card-title">Project 5</p>
+                <p class="card-desc">Description for project five.</p>
+              </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- scripts -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+  </body>
+</html>

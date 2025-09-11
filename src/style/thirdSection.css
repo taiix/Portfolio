@@ -1,0 +1,121 @@
+#skillsSection{  
+    height: 100vh;  /* Ensure it fills the full viewport height */
+    width: 100%;    /* Make sure it takes full width */
+    position: absolute;  /* Position it below the main background */
+    top: 200vh;          /* Start it right after the first background */
+    left: 0;             /* Align it to the left */
+    z-index: -1;
+  }
+  
+  .content-wrapper-skillsText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Ensure it takes full height */
+    text-align: center; /* Center text inside */
+  }
+  
+  #skillsTitle{
+    font-family: 'HeliosExt-Bold', sans-serif;
+    font-size: 1.5vw;
+    color: #ffffff;
+    margin-bottom: 10px; /* Space between the title and text */
+  
+    position: absolute; /* Position it relative to the parent */
+    right: 70%;
+    bottom: 80%;
+  }
+
+  #skillsText{
+    font-family: 'HeliosExt', sans-serif;
+    font-size: 5vw;
+    color: #ffffff;
+    width: 50%;  /* Adjust width for better responsiveness */
+    max-width: 800px; /* Max width so it doesn't stretch too far on large screens */
+  
+    position: absolute; /* Position it relative to the parent */
+    right: 60%;
+    bottom: 65%;
+  }
+  
+
+
+  .content-wrapper-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20vw;  /* Responsive width */
+    height: 85vh;  /* Keeps it proportional */
+    text-align: left;
+
+    gap: 4rem;
+
+    position: absolute;  /* Fixed to viewport */
+    left: 60vw;  /* Moves left based on screen size */
+    top: 3rem;  /* Uses rem for stability */
+}
+
+.skill-item {
+  font-family: 'HeliosExt', sans-serif;
+  font-size: 1.5vw;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Full white bar */
+.skill-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 17rem;
+  height: 19px;
+  background-color: rgb(88, 88, 88);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* Colored bar */
+.skill-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  height: 19px;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+/* Skill-specific styles */
+.unity::before {
+  width: 17rem;
+  background: #5fdd11;
+}
+
+.csharp::before {
+  width: 17rem;
+  background: #5fdd11;
+}
+
+.shaders::before {
+  width: 13rem;
+  background: #c4df29;
+}
+
+.math::before {
+  width: 13rem;
+  background: #c4df29;
+}
+
+.art::before {
+  width: 15rem;
+  background: #78c04c;
+}
+
+.web::before {
+  width: 12rem;
+  background: #ffd61e;
+}
