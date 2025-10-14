@@ -4,25 +4,130 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style/appStyle.css"/>
     <link rel="stylesheet" href="src/style/backButton.css"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Procedural Terrain</title>
+    <style>
+      /* Page-scoped layout */
+      :root {
+        --page-max: 1100px;
+      }
+      body {
+        color: #f0eeef;
+      }
+      .project-page {
+        box-sizing: border-box;
+        max-width: var(--page-max);
+        margin: 100px auto 60px;
+        padding: 0 20px 40px;
+      }
+      .project-hero h1 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin: 0 0 12px;
+      }
+      .project-hero p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        opacity: 0.95;
+        margin: 0 0 24px;
+      }
+      .project-media {
+        display: grid;
+        gap: 20px;
+      }
+      .project-video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+      }
+      .project-video video,
+      .project-video iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .project-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.15);
+      }
+      .span-12 { grid-column: span 12; }
+      .span-6  { grid-column: span 6; }
+      .span-4  { grid-column: span 4; }
+      @media (max-width: 900px) {
+        .span-6 { grid-column: span 12; }
+        .span-4 { grid-column: span 6; }
+      }
+      @media (max-width: 600px) {
+        .span-4 { grid-column: span 12; }
+      }
+    </style>
   </head>
-  
-  <body>
 
+  <body>
+    <!-- Background hooks if your appStyle.css uses them -->
     <div class="container"></div>
 
+    <!-- Back button gets injected -->
+    <script>
+      fetch('/backButton.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.createElement('div');
+          container.innerHTML = html;
+          document.body.appendChild(container);
+        })
+        .catch(() => {
+          // Fallback if the include fails
+          const a = document.createElement('a');
+          a.href = '/index.html';
+          a.textContent = '← Back';
+          a.style.cssText = 'position:fixed;top:20px;left:20px;color:#f0eeef;text-decoration:none;';
+          document.body.appendChild(a);
+        });
+    </script>
 
-<script>
-  fetch('/backButton.html')
-    .then(res => res.text())
-    .then(html => {
-      const container = document.createElement('div');
-      container.innerHTML = html;
-      document.body.appendChild(container);
-    });
-</script>
+    <main class="project-page" role="main">
+      <section class="project-hero" aria-labelledby="project-title">
+        <h1 id="project-title">Procedural Terrain</h1>
+        <p>
+          A GPU-accelerated procedural terrain prototype exploring layered noise,
+          erosion-inspired filtering, and splat-based material blending. The goal
+          was to quickly iterate on topology, achieve stable LOD transitions, and
+          keep frame times low while rendering large landscapes.
+        </p>
+      </section>
 
-</body>
+      <section class="project-media" aria-label="Project media">
+        <!-- Video: place your file at public/assets/procedural.mp4 -->
+        <div class="project-video" aria-label="Demo video">
+          <video controls preload="metadata" poster="/assets/procedural.png">
+            <source src="/assets/procedural.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Gallery: replace images with your own files in public/assets -->
+        <div class="project-gallery" aria-label="Image gallery">
+          <img class="span-12" src="/assets/procedural.png" alt="Overview of the generated terrain" loading="lazy" />
+          <img class="span-6"  src="/assets/procedural-1.png" alt="Close-up of mountain features" loading="lazy" />
+          <img class="span-6"  src="/assets/procedural-2.png" alt="Erosion details and material blending" loading="lazy" />
+          <img class="span-4"  src="/assets/procedural-3.png" alt="Wireframe view for topology inspection" loading="lazy" />
+          <img class="span-4"  src="/assets/procedural-4.png" alt="Biome transition example" loading="lazy" />
+          <img class="span-4"  src="/assets/procedural-5.png" alt="LOD transition sample" loading="lazy" />
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

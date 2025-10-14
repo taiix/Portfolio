@@ -12,32 +12,60 @@
     font-style: normal;
 }
 
-    .name {
-        font-family: 'HeliosExt-Bold', sans-serif;
-        font-size: 2.5em;
-        color: #afeb8b;
+:root { --hero-max: 1100px; }
 
-        position: absolute;
-        top: 35%;
-        left: 15%;
-    }
-    
-    .gameDevTextElement{
-        /* Box */
-        border-radius: 15px 50px;
-        background: #ffffff;
-        padding: 5px;
+.hero {
+  min-height: 100svh;                 /* full safe viewport height on mobile */
+  max-width: var(--hero-max);
+  margin: 0 auto;
+  padding: clamp(32px, 10vh, 120px)
+           max(16px, env(safe-area-inset-right))
+           clamp(24px, 10vh, 96px)
+           max(16px, env(safe-area-inset-left));
+  display: grid;
+  align-content: center;
+}
 
-        /* Text */
-        font-family: 'HeliosExt', sans-serif;
-        font-size: em;
-        color: #002f7b;
-      
-        position: absolute;
-        top: 45%;
-        left: 15%;
+/* Height-aware fluid type + robust wrapping */
+.name {
+  font-size: clamp(28px, min(8.5vw, 10.5vh), 64px);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: #afeb8b;
+  margin: 0 0 clamp(6px, 1.6vw, 12px);
+  max-inline-size: 100%;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
 
-        width: 30%;
-        height: 5%;
-        text-align: center;
-    }
+.gameDevTextElement {
+  font-size: clamp(16px, min(5.2vw, 6.5vh), 28px);
+  line-height: 1.2;
+  color: rgba(173, 216, 230, 0.95);
+  margin: 0;
+  max-inline-size: 100%;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+/* Keep dots from overlapping text on narrow screens */
+@media (max-width: 600px) {
+  .hero { padding-right: clamp(24px, 8vw, 56px); }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .name { font-size: clamp(24px, min(10vw, 9vh), 48px); }
+  .gameDevTextElement { font-size: clamp(14px, min(5.5vw, 6vh), 22px); }
+}
+
+/* Short landscape devices */
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 20px max(12px, env(safe-area-inset-right)) 20px max(12px, env(safe-area-inset-left)); }
+  .name { font-size: clamp(24px, min(7.2vw, 9vh), 48px); }
+  .gameDevTextElement { font-size: clamp(14px, min(4.5vw, 6vh), 22px); }
+}

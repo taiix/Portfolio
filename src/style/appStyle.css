@@ -86,34 +86,6 @@ html, body {
 @keyframes aurora-pulse { 0% { opacity: 0.8; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.05); } 100% { opacity: 0.8; transform: scale(1); } }
 
 /* ========================
-   Dot Navigation
-======================== */
-.dots-container {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  background: #afeb8b;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot.active {
-  width: 12px;
-  height: 12px;
-  background: #afeb8b;
-}
-
-/* ========================
    Section Animation
 ======================== */
 #block {
